@@ -1,4 +1,4 @@
-let hotels = ["Hilton", "Ritz", "Trianon Palace"]
+const hotels = ["Hilton", "Ritz", "Trianon Palace"]
 
 const getHotels = (req, res) => {
     res.json(hotels)
