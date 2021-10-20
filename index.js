@@ -5,15 +5,16 @@ const {
     PORT
 } = process.env
 const hotelsRoutes = require("./routes/hotels")
-const hotels = ["Hilton", "Ritz", "Trianon Palace"]
+// let hotels = ["Hilton", "Ritz", "Trianon Palace"]
 
 app.use(express.urlencoded({
     extended: false
 }))
+app.use(express.json())
 
 app.use("/hotels", hotelsRoutes)
 
 
 app.listen(PORT, () => {
-    console.log(`Server running on port ${port}`)
+    console.log(`Server running on port ${PORT}`)
 })
