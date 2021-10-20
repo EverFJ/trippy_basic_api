@@ -11,7 +11,7 @@ const createHotel = (req, res) => {
         hotels.push(req.body.name)
         res.status(200).json({
             message: "Hotel created",
-            hotel: req.body.name
+            name: req.body.name
         })
     } else {
         res.status(500).json({
@@ -36,14 +36,15 @@ const updateHotel = (req, res) => {
 const deleteHotel = (req, res) => {
     const index = req.params.id - 1
     if (index < hotels.length - 1) {
+        const deletedHotel = hotels.splice(index, 1)
         hotels.splice(index, 1)
         res.status(200).json({
             message: "Hotel deleted",
-            hotels: hotels
+            name: deletedHotel
         })
     }
     res.status(500).json({
-        message: "Hotel id doesn't exist"
+        message: "The hotel id you provided doesn't exist"
     })
 }
 
