@@ -4,6 +4,7 @@ require("dotenv").config()
 const {
     PORT
 } = process.env
+const port = process.env.PORT || PORT
 const hotelsRoutes = require("./routes/hotels")
 // let hotels = ["Hilton", "Ritz", "Trianon Palace"]
 
@@ -15,6 +16,6 @@ app.use(express.json())
 app.use("/hotels", hotelsRoutes)
 
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`)
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`)
 })
