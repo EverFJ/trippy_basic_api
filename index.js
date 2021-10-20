@@ -9,7 +9,6 @@ const {
 const port = process.env.PORT || PORT
 const hotelsRoutes = require("./routes/hotels")
 const authRoutes = require("./routes/auth")
-// let hotels = ["Hilton", "Ritz", "Trianon Palace"]
 
 app.engine("hbs", exphbs({
     defaultLayout: "main",
@@ -24,6 +23,7 @@ app.use(express.urlencoded({
 }))
 app.use(express.json())
 
+app.get("/login", (req, res) => res.render("login"))
 app.use("/hotels", hotelsRoutes)
 app.use("/auth", authRoutes)
 
