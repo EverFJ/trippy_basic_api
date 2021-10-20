@@ -42,10 +42,11 @@ const deleteHotel = (req, res) => {
             message: "Hotel deleted",
             name: deletedHotel
         })
+    } else {
+        res.status(500).json({
+            message: "The hotel id you provided doesn't exist"
+        })
     }
-    res.status(500).json({
-        message: "The hotel id you provided doesn't exist"
-    })
 }
 
 module.exports = {
