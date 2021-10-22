@@ -7,7 +7,7 @@ module.exports = (req, res, next) => {
 
     const token = req.headers.cookie.split("=")[1]
     const decodedToken = jwt.verify(token, JWT_SECRET)
-    console.log(`decodedToken`, decodedToken)
+    // console.log(`decodedToken`, decodedToken)
     const username = decodedToken.username
     Users.findOne({
             username: username

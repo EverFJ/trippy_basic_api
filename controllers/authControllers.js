@@ -15,8 +15,6 @@ const handleLogin = (req, res) => {
                     expiresIn: "24h"
                 })
                 res.setHeader('Set-Cookie', `token=${token}; path=/; HttpOnly, Secure`)
-
-                // return res.redirect("/")
                 return res.render("home", {
                     username: user.username
                 })
