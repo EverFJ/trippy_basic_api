@@ -27,7 +27,7 @@ app.use(express.urlencoded({
 }))
 app.use(express.json())
 
-app.get("/admin", (req, res) => res.render("admin"))
+app.get("/admin", authGard, (req, res) => res.render("admin"))
 app.use("/", homeRoutes)
 app.use("/hotels", hotelsRoutes)
 app.use("/auth", authRoutes)
