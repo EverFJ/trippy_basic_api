@@ -14,8 +14,12 @@ const handleLogin = (req, res) => {
                 }, JWT_SECRET, {
                     expiresIn: "24h"
                 })
-                res.setHeader('Set-Cookie', 'httponly; path=/', token)
+                res.setHeader('Set-Cookie', `token=${token}; path=/; HttpOnly, Secure`)
+
                 return res.redirect("/")
+                // return res.render("home", {
+                //     username: user.username
+                // })
 
                 // res.status(200).json({
                 //     userId: user._id,
