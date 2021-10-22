@@ -6,10 +6,10 @@ const authGard = (req, res, next) => {
         console.log(`token`, token)
 
 
-        // next()
+        next()
     } catch {
         res.status(401).json({
-            error: new Error("Invalid request !")
+            error: "You're not allowed to see this"
         })
 
     }
