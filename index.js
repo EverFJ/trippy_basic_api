@@ -23,6 +23,8 @@ app.use(express.urlencoded({
 }))
 app.use(express.json())
 
+app.get("/", (req, res) => res.render("home"))
+app.get("/signup", (req, res) => res.render("signup"))
 app.get("/login", (req, res) => res.render("login"))
 app.use("/hotels", hotelsRoutes)
 app.use("/auth", authRoutes)
