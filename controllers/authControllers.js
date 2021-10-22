@@ -16,15 +16,10 @@ const handleLogin = (req, res) => {
                 })
                 res.setHeader('Set-Cookie', `token=${token}; path=/; HttpOnly, Secure`)
 
-                return res.redirect("/")
-                // return res.render("home", {
-                //     username: user.username
-                // })
-
-                // res.status(200).json({
-                //     userId: user._id,
-                //     token: token
-                // })
+                // return res.redirect("/")
+                return res.render("home", {
+                    username: user.username
+                })
             } else {
                 res.render("home", {
                     message: "Sorry, username or password are wrong !!!"
