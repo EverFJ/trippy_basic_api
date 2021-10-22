@@ -2,9 +2,9 @@ const express = require("express")
 const router = express.Router()
 const homeControllers = require("../controllers/homeControllers")
 
-app.get("/", homeControllers.getHomePage)
-app.get("/login", homeControllers.getLoginPage)
-app.get("/signup", (req, res) => res.render("signup"))
-app.post("/signup")
+router.get("/", homeControllers.getHomePage)
+router.get("/login", homeControllers.getLoginPage)
+router.get("/signup", homeControllers.getSignUpPage)
+router.post("/signup", homeControllers.handleSignup)
 
 module.exports = router
