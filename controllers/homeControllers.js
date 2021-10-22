@@ -1,3 +1,6 @@
+const mongoose = require("mongoose")
+const User = require("../models/Users")
+
 const getHomePage = (req, res) => {
     res.render("home")
 }
@@ -9,7 +12,19 @@ const getSignUpPage = (req, res) => {
 }
 const handleSignup = (req, res) => {
     console.log(`req.body`, req.body)
-    res.json(req.body)
+    User.create({
+            username: req.body.username,
+            password: req.body.password
+        })
+        .then(user => res.render("login", {
+            user: user
+        }))
+        .catch(err => {
+            console.error(err)
+            res.status(500).json({
+                error: err
+            })
+        })
 }
 
 module.exports = {
