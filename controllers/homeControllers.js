@@ -16,8 +16,8 @@ const handleSignup = (req, res) => {
             username: req.body.username,
             password: req.body.password
         })
-        .then(user => res.render("login", {
-            user: user
+        .then(user => res.render("home", {
+            username: req.body.username
         }))
         .catch(err => {
             console.error(err)

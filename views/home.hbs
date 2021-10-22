@@ -2,4 +2,8 @@
 <a href="/login">Login</a>
 <a href="/signup">Signup</a>
 <br />
+{{#if username}}
+  <p>You've been signed up {{username}}</p>
+{{/if}}
+<br />
 <a href="/admin"><button>Go see the secret content</button></a>
